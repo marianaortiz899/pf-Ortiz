@@ -30,6 +30,7 @@ export class UserFormComponent {
     } else {
       this.userSubmitted.emit(this.userForm.value)
       this.userForm.reset();
+      this.userForm.markAsUntouched();
     }
   }
 
