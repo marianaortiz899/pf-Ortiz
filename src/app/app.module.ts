@@ -6,16 +6,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './layouts/dashboard/dashboard.component';
 import { DashboardModule } from './layouts/dashboard/dashboard.module';
 import { FormGroup } from '@angular/forms';
-
+import { PipesModule } from './layouts/shared/pipes.module';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     DashboardModule,
+    PipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

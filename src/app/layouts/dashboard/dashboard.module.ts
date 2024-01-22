@@ -7,16 +7,19 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { UsersComponent } from './pages/users/users.component';
 import { UsersModule } from './pages/users/users.module';
+import { TitleDirective } from '../shared/direct/title.directive';
+import { PipesModule } from '../shared/pipes.module';
 
 
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
-    CommonModule, MatSidenavModule,MatButtonModule,MatToolbarModule,MatIconModule, UsersModule, 
+    CommonModule, MatSidenavModule,MatButtonModule,MatToolbarModule,MatIconModule, UsersModule, PipesModule
   ],
   exports: [DashboardComponent],
+  providers: [TitleDirective],
 })
 export class DashboardModule { }

@@ -7,15 +7,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import {ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-
-
-
+import { PipesModule } from '../../../shared/pipes.module';
+import { FullNamePipe } from '../../../shared/fullname.pipe';
 @NgModule({
   declarations: [
     UsersComponent,
-    UserFormComponent
+    UserFormComponent,
   ],
   imports: [
     CommonModule,
@@ -25,8 +24,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    PipesModule,
+    FormsModule
   ],
-  exports: [UsersComponent,]
+  exports: [UsersComponent,],
+  providers: [FullNamePipe]
 })
 export class UsersModule { }

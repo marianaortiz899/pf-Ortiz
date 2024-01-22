@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { stringValidator } from '../../../custom-validators';
 
 @Component({
   selector: 'app-user-form',
@@ -14,12 +15,11 @@ export class UserFormComponent {
   userForm: FormGroup;
   constructor(private fb: FormBuilder){
    this.userForm = this.fb.group({
-    firstName: this.fb.control('', Validators.required),
-    lastName: this.fb.control('', Validators.required),
-    email : this.fb.control('', Validators.required),
-    password: this.fb.control('', Validators.required),
-    role: this.fb.control('', Validators.required),
-
+    firstName: this.fb.control('', [Validators.required, stringValidator]),
+    lastName: this.fb.control('', [Validators.required, stringValidator]),
+    email : this.fb.control('', [Validators.required, Validators.email]),
+    password: this.fb.control('', [Validators.required,]),
+    role: this.fb.control('', [Validators.required]),
    }
    )
   }
@@ -35,9 +35,6 @@ export class UserFormComponent {
   }
 
   ngOnInit() {
-    this.userForm.get('role')?.valueChanges.subscribe(value => {
-      console.log(value)
-    })
-   }
+  }
     
 }

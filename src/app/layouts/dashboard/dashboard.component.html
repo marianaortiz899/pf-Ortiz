@@ -1,33 +1,30 @@
 
 <mat-drawer-container class="dashboard-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
+      <p appTitle>¡Bienvenido al Campos Virtual!</p>
+      <button (click)="click1()" mat-raised-button class="mr-3">Alumno</button>
+      <button (click)="click2()" mat-raised-button>Profesor</button>
       @if (showFiller) {
-        <p>Lorem, ipsum dolor sit amet consectetur.</p>
+        <p>Información</p>
+        <p>Contacto</p>
+        <p>Cursos</p>
       }
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
+        @if (showFiller2) {
+          <p>Información Profesor</p>
+          <p>Contacto Profesor</p>
+          <p>Cursos Profesor</p>
+        }
     </mat-drawer>
   <!--CONTENIDO-->
     <div class="example-sidenav-content">
        <mat-toolbar color="accent">
-        <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span>My App</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
-        </button>
-      </mat-toolbar>
+          <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon >menu</mat-icon>
+          </button>
+          <span>My App</span>
+        </mat-toolbar>
       <div class="p-3">
         <app-users></app-users>
       </div>          
-      
     </div>
-   
 </mat-drawer-container>
