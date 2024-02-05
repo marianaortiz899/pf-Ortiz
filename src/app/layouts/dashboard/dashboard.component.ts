@@ -1,21 +1,27 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LoadingService } from '../../services/loading.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+  styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent {
-  showFiller=false;
-  showFiller2=false;
+export class DashboardComponent implements OnInit {
+  isLoading = false
 
-  click1() {
-    this.showFiller = !this.showFiller;
-    if (this.showFiller) this.showFiller2 = false;
+  constructor(private loadingService: LoadingService,){
+    this.loadingService.isLoading$.subscribe({
+      next: (value) => {
+        setTimeout(()=>{
+          this.isLoading = value;
+        });
+      },
+    });
   }
 
-  click2() {
-    this.showFiller2 = !this.showFiller2;
-    if (this.showFiller2) this.showFiller = false;
+
+  ngOnInit() {
+    // this.router.navigate(['dashboard/home',]);
   }
+
 }

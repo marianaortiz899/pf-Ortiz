@@ -1,19 +1,28 @@
 
 <mat-drawer-container class="dashboard-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p appTitle>¡Bienvenido al Campos Virtual!</p>
-      <button (click)="click1()" mat-raised-button class="mr-3">Alumno</button>
-      <button (click)="click2()" mat-raised-button>Profesor</button>
-      @if (showFiller) {
-        <p>Información</p>
-        <p>Contacto</p>
-        <p>Cursos</p>
-      }
-        @if (showFiller2) {
-          <p>Información Profesor</p>
-          <p>Contacto Profesor</p>
-          <p>Cursos Profesor</p>
-        }
+    <mat-drawer #drawer mode="side" class="dashboard-sidebar">
+      <mat-nav-list>
+        <a 
+          #homeLink="routerLinkActive"
+          routerLinkActive
+          [activated]="homeLink.isActive"
+          routerLink="" mat-list-item>Inicio</a>
+        <a 
+          #usersLink="routerLinkActive"
+          routerLinkActive
+          [activated]="usersLink.isActive"
+          routerLink="users" mat-list-item >Alumno</a>
+        <a 
+        #coursesLink="routerLinkActive"
+        routerLinkActive
+        [activated]="coursesLink.isActive"
+        routerLink="courses" mat-list-item >Cursos</a>
+        <a
+          #teacherLink="routerLinkActive"
+          routerLinkActive
+          [activated]="teacherLink.isActive"
+          routerLink="teacher" mat-list-item>Profesor</a>
+      </mat-nav-list>
     </mat-drawer>
   <!--CONTENIDO-->
     <div class="example-sidenav-content">
@@ -24,7 +33,7 @@
           <span>My App</span>
         </mat-toolbar>
       <div class="p-3">
-        <app-users></app-users>
+        <router-outlet></router-outlet>
       </div>          
     </div>
 </mat-drawer-container>

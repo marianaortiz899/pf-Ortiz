@@ -9,8 +9,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import { PipesModule } from '../../../shared/pipes.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { FullNamePipe } from '../../../shared/fullname.pipe';
+import { UserService } from '../../../../services/users.service';
+import { RouterModule } from '@angular/router';
+import { UsersdetailModule } from './usersdetail/usersdetail.module';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     UsersComponent,
@@ -25,10 +29,13 @@ import { FullNamePipe } from '../../../shared/fullname.pipe';
     MatButtonModule,
     ReactiveFormsModule,
     MatIconModule,
-    PipesModule,
-    FormsModule
+    SharedModule,
+    FormsModule,
+    RouterModule,
+    UsersdetailModule,
+    MatProgressSpinner
   ],
   exports: [UsersComponent,],
-  providers: [FullNamePipe]
+  providers: [FullNamePipe, UserService]
 })
 export class UsersModule { }
