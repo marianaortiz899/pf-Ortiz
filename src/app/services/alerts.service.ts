@@ -6,6 +6,7 @@ import Swal, { SweetAlertOptions } from "sweetalert2";
 export class AlertsService{
     private notification$ = new Subject<SweetAlertOptions>()
 
+    
     constructor () {
         this.notification$.subscribe({
             next:(options)=> {
