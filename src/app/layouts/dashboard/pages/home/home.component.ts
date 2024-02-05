@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LoadingService } from '../../../../services/loading.service';
 
 
 
@@ -10,8 +9,5 @@ import { LoadingService } from '../../../../services/loading.service';
 })
 export class HomeComponent {
   
-  
-  isLoading = false;
-
 
 }

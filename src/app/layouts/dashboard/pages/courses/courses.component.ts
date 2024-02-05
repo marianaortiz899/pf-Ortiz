@@ -4,6 +4,8 @@ import { Course } from './models';
 import { LoadingService } from '../../../../services/loading.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CourseDialogComponent } from './course-dialog/course-dialog.component';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-courses',
@@ -14,7 +16,7 @@ import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 export class CoursesComponent {
 [x: string]: any;
   displayedColumns: string[] = ['id', 'courseName','teacherName', 'actions',];
-
+  isLoading = false;
   courses: Course[] =[]
   
   constructor(
@@ -22,6 +24,7 @@ export class CoursesComponent {
     private loadingService: LoadingService,
     public dialog: MatDialog)
     {
+    this.loadingService.setIsLoading(true);
     this.coursesService.getCourses().subscribe({
       next: (courses)=>{
         this.courses = courses;
@@ -31,6 +34,22 @@ export class CoursesComponent {
       }
     })
   }
+  
+  ngOnInit(): void {
+    this.loadingService.setIsLoading(true);
+    this.loadingService.isLoading$.subscribe(data=> {
+      this.isLoading = data
+    })
+    this.coursesService.getCourses().subscribe({
+      next: (courses) => {
+        this.courses = courses;
+      },
+      complete: () => {
+        this.loadingService.setIsLoading(false)
+      }
+    })
+  }
+
 
   onCreate(): void {
     this.dialog.open(CourseDialogComponent).
@@ -58,7 +77,13 @@ export class CoursesComponent {
             this.coursesService
               .updateCourseByID(course.id, result)
               .subscribe({
-                next: (courses) => (this.courses = courses),
+                next: (courses) => {
+                  this.courses = courses
+                  Swal.fire ('Exito','El curso se editó correctamente', 'success');
+                },
+                error: (error)=>{
+                  Swal.fire('Error', 'Hubo un problema al editar el curso', 'error')
+                }
               });
           }
         },
@@ -66,12 +91,26 @@ export class CoursesComponent {
   }
 
   onDelete(id: number) {
-    if (confirm('Esta seguro?')) {
-      this.coursesService.deleteCourseById(id).subscribe({
-        next: (courses) => {
-          this.courses = courses;
-        },
-      });
-    }
+    Swal.fire({
+    title: '¿Estás seguro?',
+    text: 'Esta acción no se puede deshacer',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Aceptar',
+    cancelButtonText: 'Cancelar'
+    }).then((result)=>{
+        if  (result.isConfirmed) {
+        this.coursesService.deleteCourseById(id).subscribe({
+          next: (courses) => {
+            this.courses = courses;
+            Swal.fire('Realizado', 'Se eliminó correctamente', 'success');
+          },
+          error: (error) => {
+            Swal.fire('Error', 'Hubo un problema al eliminar el curso', 'error');
+          }
+        });
+      }
+    })
+    
   }
 }

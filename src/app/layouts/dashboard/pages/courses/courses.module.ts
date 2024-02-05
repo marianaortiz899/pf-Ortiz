@@ -10,7 +10,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { SharedModule } from '../../../shared/shared.module';
-
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     CoursesComponent,
@@ -22,7 +22,7 @@ import { SharedModule } from '../../../shared/shared.module';
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule, 
-    SharedModule
+    SharedModule, MatProgressSpinner
   ],
   providers: [CoursesService, LoadingService]
 })

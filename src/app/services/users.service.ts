@@ -30,4 +30,5 @@ export class UserService{
         USERS_DB = USERS_DB.filter((user)=>user.id !== userID);
         return this.getUsers().pipe(tap(() =>this.alerts.showSuccess('Realizado', 'Se eliminó correctamente')));
     }
+    
 }
