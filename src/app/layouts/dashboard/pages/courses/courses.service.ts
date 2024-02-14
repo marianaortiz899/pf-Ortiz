@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { delay, finalize, of } from "rxjs";
 import { Course } from "./models";
-import { LoadingService } from "../../../../services/loading.service";
+import { LoadingService } from "../../../../core/services/loading.service";
 import Swal, { SweetAlertOptions } from "sweetalert2";
 
  let courses : Course[]= [{

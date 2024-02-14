@@ -1,0 +1,43 @@
+﻿7820> 2023-12-23 22:42:05> Program: Starting Squirrel Updater: --install .
+7820> 2023-12-23 22:42:05> Program: Starting install, writing to C:\Users\ortiz\AppData\Local\SquirrelTemp
+7820> 2023-12-23 22:42:05> Program: About to install to: C:\Users\ortiz\AppData\Local\Discord
+7820> 2023-12-23 22:42:05> SingleGlobalInstance: Grabbing lockfile with timeout of 00:00:10
+7820> 2023-12-23 22:42:05> CheckForUpdateImpl: Reading RELEASES file from C:\Users\ortiz\AppData\Local\SquirrelTemp
+7820> 2023-12-23 22:42:05> CheckForUpdateImpl: Remote version 1.0.9028 differs from local 
+7820> 2023-12-23 22:42:05> CheckForUpdateImpl: First run or local directory is corrupt, starting from scratch
+7820> 2023-12-23 22:42:05> ApplyReleasesImpl: Writing files to app directory: C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\d3dcompiler_47.dll to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\d3dcompiler_47.dll
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\app.ico to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\app.ico
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\chrome_100_percent.pak to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\chrome_100_percent.pak
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\chrome_200_percent.pak to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\chrome_200_percent.pak
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\Discord.exe to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\Discord.exe
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\ffmpeg.dll to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\ffmpeg.dll
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\icudtl.dat to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\icudtl.dat
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\installer.db to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\installer.db
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\libEGL.dll to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\libEGL.dll
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\libGLESv2.dll to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\libGLESv2.dll
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\resources.pak to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\resources.pak
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\snapshot_blob.bin to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\snapshot_blob.bin
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\updater.node to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\updater.node
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\vk_swiftshader.dll to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\vk_swiftshader.dll
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\vulkan-1.dll to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\vulkan-1.dll
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\v8_context_snapshot.bin to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\v8_context_snapshot.bin
+7820> 2023-12-23 22:42:10> ApplyReleasesImpl: Moving file C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\lib\net45\vk_swiftshader_icd.json to C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\vk_swiftshader_icd.json
+7820> 2023-12-23 22:42:11> ApplyReleasesImpl: Squirrel Enabled Apps: [C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\Discord.exe]
+7820> 2023-12-23 22:42:17> Utility: Process Started: C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\Discord.exe --squirrel-install 1.0.9028, pid 1316
+7820> 2023-12-23 22:42:24> Utility: Received exitcode 0 from process C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\Discord.exe
+7820> 2023-12-23 22:42:24> ApplyReleasesImpl: ran C:\Users\ortiz\AppData\Local\Discord\app-1.0.9028\Discord.exe, pid 7880
+7820> 2023-12-23 22:42:24> ApplyReleasesImpl: Starting fixPinnedExecutables
+7820> 2023-12-23 22:42:24> ApplyReleasesImpl: fixPinnedExecutables: newCurrentFolder: app-1.0.9028
+7820> 2023-12-23 22:42:24> ApplyReleasesImpl: fixPinnedExecutables: enumerating path C:\Users\ortiz\AppData\Roaming\Microsoft\Windows\Start Menu failed: System.UnauthorizedAccessException: Acceso denegado a la ruta de acceso 'C:\Users\ortiz\AppData\Roaming\Microsoft\Windows\Start Menu\Programas'.
+   en System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   en System.IO.FileSystemEnumerableIterator`1.AddSearchableDirsToStack(SearchData localSearchData)
+   en System.IO.FileSystemEnumerableIterator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.IO.DirectoryInfo.InternalGetFiles(String searchPattern, SearchOption searchOption)
+   en System.IO.DirectoryInfo.GetFiles(String searchPattern, SearchOption searchOption)
+   en Squirrel.UpdateManager.ApplyReleasesImpl.fixPinnedExecutables(SemanticVersion newCurrentVersion)
+7820> 2023-12-23 22:42:24> ApplyReleasesImpl: Updating shortcut C:\Users\ortiz\OneDrive\Escritorio\Discord.lnk
+7820> 2023-12-23 22:42:24> ApplyReleasesImpl: Fixing up tray icons
+7820> 2023-12-23 22:42:24> ApplyReleasesImpl: cleanDeadVersions: for version 1.0.9028
+7820> 2023-12-23 22:42:24> ApplyReleasesImpl: cleanDeadVersions: exclude current version folder app-1.0.9028

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../../../../../services/users.service';
+import { UserService } from '../../../../../core/services/users.service';
 
 @Component({
   selector: 'app-usersdetail',

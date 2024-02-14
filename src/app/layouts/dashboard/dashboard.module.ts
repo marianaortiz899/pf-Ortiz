@@ -10,8 +10,6 @@ import { UsersModule } from './pages/users/users.module';
 import { TitleDirective } from '../shared/direct/title.directive';
 import { SharedModule } from '../shared/shared.module';
 import { RxjsIntroModule } from './pages/rxjs-intro/rxjs-intro.module';
-import { LoadingService } from '../../services/loading.service';
-import { UserService } from '../../services/users.service';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
 import { HomeModule } from './pages/home/home.module';
@@ -21,11 +19,10 @@ import { UsersdetailComponent } from './pages/users/usersdetail/usersdetail.comp
 import { MatTableModule } from '@angular/material/table';
 import { CoursesModule } from './pages/courses/courses.module';
 import { CoursesComponent } from './pages/courses/courses.component';
+import { UserGuard } from '../../core/guards/user.guard';
 
 @NgModule({
-  declarations: [
-    DashboardComponent,
-  ],
+  declarations: [DashboardComponent],
   imports: [
     CommonModule, 
     MatSidenavModule,
@@ -38,33 +35,41 @@ import { CoursesComponent } from './pages/courses/courses.component';
     RouterOutlet,
     RouterModule.forChild([
         {
-          path: 'users',
-          component: UsersComponent,
-        },
-        {
           path: 'users/:id',
-          component: UsersdetailComponent,
+          canActivate:[UserGuard],
+          loadChildren: ()=>
+            import('./pages/users/usersdetail/usersdetail.module').then(
+              (m)=> m. UsersdetailModule
+          )
         },
         {
-          path:'**',
-          redirectTo: '**'
-        },
-        {
-          path:'students',
-          component: UsersComponent
+          path:'users/:role',
+          canActivate:[UserGuard],
+          loadChildren: ()=>
+            import('./pages/users/users.module').then(
+              (m)=> m.UsersModule
+          )
         },
         {
           path:'courses',
-          component: CoursesComponent
+          loadChildren: ()=>
+            import('./pages/courses/courses.module').then(
+              (m)=> m.CoursesModule
+          )
+        },
+        {
+          path:'home',
+          loadChildren: ()=>
+            import('./pages/home/home.module').then(
+              (m)=> m.HomeModule
+          )
         },
         {
           path:'teacher',
-          redirectTo:''
-        },
-        {
-          path:'',
-          component: HomeComponent
+          redirectTo:'home'
+
         }
+
     ]),
     MatListModule,
     HomeModule,
@@ -72,7 +77,7 @@ import { CoursesComponent } from './pages/courses/courses.component';
     MatTableModule,
     CoursesModule
   ],
-exports: [DashboardComponent,],
-  providers: [TitleDirective, LoadingService, UserService],
+  exports: [DashboardComponent,],
+  providers: [TitleDirective,],
 })
 export class DashboardModule { }

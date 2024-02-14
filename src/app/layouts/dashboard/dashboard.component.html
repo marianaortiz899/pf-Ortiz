@@ -6,7 +6,7 @@
           #homeLink="routerLinkActive"
           routerLinkActive
           [activated]="homeLink.isActive"
-          routerLink="" mat-list-item>Inicio</a>
+          routerLink="home" mat-list-item>Inicio</a>
         <a 
           #usersLink="routerLinkActive"
           routerLinkActive
@@ -22,6 +22,7 @@
           routerLinkActive
           [activated]="teacherLink.isActive"
           routerLink="teacher" mat-list-item>Profesor</a>
+        <a (click)="logout()" mat-list-item class="cerrar-sesion">Cerrar sesion</a>
       </mat-nav-list>
     </mat-drawer>
   <!--CONTENIDO-->

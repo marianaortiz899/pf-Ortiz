@@ -1,3 +1,5 @@
+@use "@angular/material" as mat;
+
 .dashboard-container{
     height: 100vh;
 
@@ -5,6 +7,18 @@
 mat-sidenav {
     width: 0px;
 }
-.dashboard-sidebar{
-    width: 15%;
+
+.dashboard-sidebar {
+  width: 200px;
+}
+
+.is-active {
+  color: mat.get-color-from-palette(mat.$green-palette, 800);
+}
+
+.cerrar-sesion{
+    margin-top: 190%;
+    background-color:#e4b5ff ;/* Color rosado. Puedes ajustar el valor según tus preferencias */
+    color: #fff; /* Color del texto para asegurar la legibilidad, puedes ajustarlo según tus preferencias */
+    text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
 }

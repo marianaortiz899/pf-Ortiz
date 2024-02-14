@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CoursesService } from './courses.service';
 import { Course } from './models';
-import { LoadingService } from '../../../../services/loading.service';
+import { LoadingService } from '../../../../core/services/loading.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 import Swal from 'sweetalert2';

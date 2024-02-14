@@ -11,10 +11,11 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from '../../../shared/shared.module';
 import { FullNamePipe } from '../../../shared/fullname.pipe';
-import { UserService } from '../../../../services/users.service';
+import { UserService } from '../../../../core/services/users.service';
 import { RouterModule } from '@angular/router';
 import { UsersdetailModule } from './usersdetail/usersdetail.module';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { UsersRoutingModule } from './users.routing.module';
 @NgModule({
   declarations: [
     UsersComponent,
@@ -33,7 +34,8 @@ import { MatProgressSpinner } from '@angular/material/progress-spinner';
     FormsModule,
     RouterModule,
     UsersdetailModule,
-    MatProgressSpinner
+    MatProgressSpinner,
+    UsersRoutingModule,
   ],
   exports: [UsersComponent,],
   providers: [FullNamePipe, UserService]

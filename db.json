@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": "ce2e",
+      "firstName": "x",
+      "lastName": "x",
+      "email": "x@g",
+      "password": "s",
+      "role": "ADMIN",
+      "token": "asdfghjklrty1"
+    },
+    {
+      "id": "107e",
+      "firstName": "s",
+      "lastName": "s",
+      "email": "s@gmail",
+      "password": "s",
+      "role": "ADMIN",
+      "token": "asdfghjklrty2"
+    },
+    {
+      "id": "7962",
+      "firstName": "a",
+      "lastName": "a",
+      "email": "a@gmail.com",
+      "password": "a",
+      "role": "Admin"
+    },
+    {
+      "id": "2723",
+      "firstName": "C",
+      "lastName": "CCC",
+      "email": "CC@gmail.com",
+      "password": "1203",
+      "role": "USER",
+      "token": "efeff"
+    },
+    {
+      "id": "45a0",
+      "firstName": "a",
+      "lastName": "a",
+      "email": "a@g",
+      "password": "a",
+      "role": "ADMIN"
+    },
+    {
+      "id": "94e6",
+      "firstName": "C",
+      "lastName": "CCC",
+      "email": "CC@gmail.com",
+      "password": "1203",
+      "role": "USER"
+    },
+    {
+      "id": "fe47",
+      "firstName": "x",
+      "lastName": "x",
+      "email": "x@g",
+      "password": "x",
+      "role": "User"
+    }
+  ],
+  "courses": [
+    {
+      "id": "number",
+      "name": "string",
+      "tname": "string"
+    }
+  ]
+}

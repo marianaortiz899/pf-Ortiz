@@ -7,7 +7,7 @@ import { DashboardModule } from './layouts/dashboard/dashboard.module';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SharedModule } from './layouts/shared/shared.module';
 import { CoursesModule } from './layouts/dashboard/pages/courses/courses.module';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,10 @@ import { CoursesModule } from './layouts/dashboard/pages/courses/courses.module'
     AppRoutingModule,
     BrowserAnimationsModule,
     DashboardModule,
-    SharedModule, MatProgressSpinnerModule, CoursesModule
+    SharedModule, 
+    MatProgressSpinnerModule, 
+    CoursesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

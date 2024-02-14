@@ -6,4 +6,5 @@ export interface User {
     password: string;
     role: string;
     fecha?: Date;
+    token: string;
 }

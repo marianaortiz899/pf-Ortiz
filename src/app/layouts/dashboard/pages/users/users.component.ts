@@ -1,8 +1,9 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { User } from './models';
-import { UserService } from '../../../../services/users.service';
-import { Observable } from 'rxjs';
-import { LoadingService } from '../../../../services/loading.service';
+import { UserService } from '../../../../core/services/users.service';
+import { Observable, forkJoin } from 'rxjs';
+import { LoadingService } from '../../../../core/services/loading.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-users',
@@ -10,6 +11,8 @@ import { LoadingService } from '../../../../services/loading.service';
   styleUrl: './users.component.scss',
 })
 export class UsersComponent implements OnInit {
+
+  roles: string[] = [];
   displayedColumns: string[] = ['id', 'fullName', 'email', 'role', 'fecha', 'delete'];
   dataSource: User[] = []
   isLoading = false;
@@ -21,7 +24,8 @@ export class UsersComponent implements OnInit {
     lastName: '',
     email: '',
     password: '',
-    role: ''
+    role: '',
+    token: ''
   }
 
   private idCounter: number = 0;
@@ -35,20 +39,29 @@ export class UsersComponent implements OnInit {
       this.loadingService.setIsLoading(true);
     }
 
+
   ngOnInit(): void {
+    this.getPageData();
+  }
+
+  getPageData(): void {
     this.loadingService.setIsLoading(true);
-    this.loadingService.isLoading$.subscribe(data=> {
-      this.isLoading = data
-    })
-    this.UserService.getUsers().subscribe({
-      next: (users) => {
-        this.dataSource = users;
+    forkJoin([
+      this.UserService.getRoles(),
+      this.UserService.getUsers(),
+    ]).subscribe({
+      next: (value) => {
+        this.roles = value [0];
+        this.dataSource = value [1];
       },
       complete: () => {
-        this.loadingService.setIsLoading(false)
-      }
+        this.loadingService.setIsLoading(false);
+      },
+      
     })
+
   }
+
 
   onUserSubmitted(ev: User): void {
     this.loadingService.setIsLoading(true);
@@ -56,7 +69,7 @@ export class UsersComponent implements OnInit {
     const currentUserCount= this.dataSource.length
 
     this.UserService
-      .createUser({ ...ev, id: currentUserCount + 1 })
+      .createUser(ev)
       .subscribe({
         next: (users: any) => {
           this.dataSource = [...users];
@@ -66,7 +79,6 @@ export class UsersComponent implements OnInit {
         },
       });
   }
-  // UsersComponent.onDeleteUser(ev: User): void
   onDeleteUser(ev: User): void {
     this.loadingService.setIsLoading(true);
     this.UserService.deleteUser(ev.id).subscribe({
@@ -79,9 +91,6 @@ export class UsersComponent implements OnInit {
     });
   }
 
-//eliminarUsuario(id: number): void {
-//this.dataSource = this.dataSource.filter(user => user.id !== id);
-//}
   
 
   editarUsuario(user: User) {
@@ -90,14 +99,11 @@ export class UsersComponent implements OnInit {
   }
 
   guardar() {
-    // Encuentra el índice del usuario en el dataSource
     const index = this.dataSource.findIndex(user => user.id === this.userEdit.id);
 
     if (index !== -1) {
-      // Actualiza el usuario en el dataSource
       this.dataSource[index] = this.userEdit;
 
-      // Notifica a Angular que los datos han cambiado
       this.dataSource = [...this.dataSource];
     }
     this.editar = false;

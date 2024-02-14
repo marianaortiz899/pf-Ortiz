@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, Subject, filter } from 'rxjs';
-import { LoadingService } from '../../../../services/loading.service';
-import { AlertsService } from '../../../../services/alerts.service';
+import { LoadingService } from '../../../../core/services/loading.service';
+import { AlertsService } from '../../../../core/services/alerts.service';
 
 @Component({
   selector: 'app-rxjs-intro',
@@ -34,7 +34,7 @@ export class RxjsIntroComponent {
     ).subscribe({
       next: (usuarios)=> {
       this.alertsService.showSuccess('Realizado','Se cargaron los datos')
-       //this.alertsService.showError();
+
       console.log(usuarios)
       },
       complete: () =>{
