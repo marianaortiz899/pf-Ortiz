@@ -14,6 +14,3 @@ export const AuthGuard: CanActivateFn = (route, state) => {
     )
   );
 };
-
-//Me protege que cualquier usuario NO registrado no ingrese
-//De todas formas se crea un UNICO usuario que pueda ingresar

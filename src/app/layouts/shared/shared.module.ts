@@ -12,6 +12,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { NgModule } from "@angular/core";
 import { ValidationErrorsPipe } from './validation-errors.pipe';
+import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ValidationErrorsPipe } from './validation-errors.pipe';
     MatDatepickerModule,
     MatPaginatorModule,
     ValidationErrorsPipe,
+    MatSelectModule
 
   ],
 })

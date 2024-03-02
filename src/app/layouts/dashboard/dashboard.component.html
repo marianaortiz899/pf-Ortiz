@@ -7,21 +7,21 @@
           routerLinkActive
           [activated]="homeLink.isActive"
           routerLink="home" mat-list-item>Inicio</a>
-        <a 
+        <a *ngIf="role === 'ADMIN'"
           #usersLink="routerLinkActive"
           routerLinkActive
           [activated]="usersLink.isActive"
-          routerLink="users" mat-list-item >Alumno</a>
+          routerLink="users" mat-list-item>Usuarios</a>
         <a 
-        #coursesLink="routerLinkActive"
-        routerLinkActive
-        [activated]="coursesLink.isActive"
-        routerLink="courses" mat-list-item >Cursos</a>
-        <a
-          #teacherLink="routerLinkActive"
+          #coursesLink="routerLinkActive"
           routerLinkActive
-          [activated]="teacherLink.isActive"
-          routerLink="teacher" mat-list-item>Profesor</a>
+          [activated]="coursesLink.isActive"
+          routerLink="courses" mat-list-item >Cursos</a>
+        <a 
+        #inscriptionsLink="routerLinkActive"
+        routerLinkActive
+        [activated]="inscriptionsLink.isActive"
+        routerLink="inscriptions" mat-list-item >Inscripciones</a>
         <a (click)="logout()" mat-list-item class="cerrar-sesion">Cerrar sesion</a>
       </mat-nav-list>
     </mat-drawer>
@@ -32,6 +32,11 @@
             <mat-icon >menu</mat-icon>
           </button>
           <span>My App</span>
+          <span style="flex: 1"> </span>
+          <div *ngIf="authUser$ | async; let user">
+            <span>{{ user.firstName }} {{ user.lastName }}</span>
+            <p class="m-0">{{ user.email }}</p>
+          </div>
         </mat-toolbar>
       <div class="p-3">
         <router-outlet></router-outlet>

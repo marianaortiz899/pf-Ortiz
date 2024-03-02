@@ -17,6 +17,13 @@ export class LoginComponent {
       password: this.fb.control('', [Validators.required,],)
     })
   }
+
+  togglePasswordVisibility(event: Event) {
+    this.revealPassword = !this.revealPassword;
+    event.stopPropagation();
+    event.preventDefault();
+
+  }
   
   onSubmit(): void{
     if (this.loginForm.invalid){

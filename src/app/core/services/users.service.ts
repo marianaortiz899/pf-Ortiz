@@ -42,4 +42,7 @@ export class UserService{
         pipe(mergeMap(()=> this.getUsers()))
     }
     
+    getAllStudents():Observable<User[]>{
+        return this.httpClient.get<User[]>(`${environment.apiURL}/users?role=STUDENT`)
+    }
 }

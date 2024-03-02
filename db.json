@@ -1,70 +1,77 @@
 {
   "users": [
     {
-      "id": "ce2e",
-      "firstName": "x",
-      "lastName": "x",
-      "email": "x@g",
-      "password": "s",
-      "role": "ADMIN",
-      "token": "asdfghjklrty1"
-    },
-    {
-      "id": "107e",
-      "firstName": "s",
-      "lastName": "s",
-      "email": "s@gmail",
-      "password": "s",
-      "role": "ADMIN",
-      "token": "asdfghjklrty2"
-    },
-    {
-      "id": "7962",
-      "firstName": "a",
-      "lastName": "a",
-      "email": "a@gmail.com",
-      "password": "a",
-      "role": "Admin"
-    },
-    {
-      "id": "2723",
+      "id": "0cf3",
       "firstName": "C",
       "lastName": "CCC",
       "email": "CC@gmail.com",
       "password": "1203",
-      "role": "USER",
-      "token": "efeff"
+      "role": "ADMIN",
+      "token": "adrfrvrg4"
     },
     {
-      "id": "45a0",
-      "firstName": "a",
-      "lastName": "a",
-      "email": "a@g",
-      "password": "a",
-      "role": "ADMIN"
-    },
-    {
-      "id": "94e6",
+      "id": "7c1c",
       "firstName": "C",
       "lastName": "CCC",
       "email": "CC@gmail.com",
       "password": "1203",
-      "role": "USER"
+      "role": "ADMIN",
+      "token": "adrfrvrg5"
     },
     {
-      "id": "fe47",
+      "id": "9db2",
       "firstName": "x",
       "lastName": "x",
       "email": "x@g",
-      "password": "x",
-      "role": "User"
+      "password": "1",
+      "role": "ADMIN",
+      "token": "adrfrvrg6"
+    },
+    {
+      "id": "ca18",
+      "firstName": "a",
+      "lastName": "a",
+      "email": "a@a",
+      "password": "a",
+      "role": "STUDENT",
+      "token": "adrfrvrg7"
+    },
+    {
+      "id": "7149",
+      "firstName": "Fabio",
+      "lastName": "Escudero",
+      "email": "fabinho@gmail",
+      "password": "110523",
+      "role": "STUDENT",
+      "token":"dkfmcdmv"
     }
   ],
   "courses": [
     {
-      "id": "number",
-      "name": "string",
-      "tname": "string"
+      "id": "1",
+      "name": "Curso online de JavaScript",
+      "description": "Dominando JavaScript: Desde Principiantes hasta Desarrolladores Avanzados",
+      "schedule": "Mon, Wed, Fri 10:00 - 12:00",
+      "price": "70000"
+    },
+    {
+      "id": "2",
+      "name": "Curso online de Angular",
+      "description": "Dominando JavaScript: Desde Principiantes hasta Desarrolladores Avanzados",
+      "schedule": "Mon, Wed, Fri 10:00 - 12:00",
+      "price": "70000"
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": "646c",
+      "courseId": "2",
+      "userId": "7149"
+    },
+    {
+      "id": "90e2",
+      "courseId": "2",
+      "userId": "7149"
     }
   ]
 }

@@ -5,6 +5,11 @@ import { LoadingService } from '../../../../core/services/loading.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 import Swal from 'sweetalert2';
+import { NavigationExtras, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { User } from '../users/models';
+import { Store } from '@ngrx/store';
+import { selectAuthUser } from '../../../../core/store/auth/selectors';
 
 
 @Component({
@@ -14,16 +19,22 @@ import Swal from 'sweetalert2';
 })
 
 export class CoursesComponent {
-[x: string]: any;
-  displayedColumns: string[] = ['id', 'courseName','teacherName', 'actions',];
+  
+  authUser$: Observable<User | null>
+  role?: string;
+  [x: string]: any;
+  displayedColumns: string[] = ['id', 'name','description', 'schedule','price', 'action'];
   isLoading = false;
   courses: Course[] =[]
   
   constructor(
     private coursesService: CoursesService,
     private loadingService: LoadingService,
-    public dialog: MatDialog)
+    public dialog: MatDialog,
+    private router: Router,
+    private store: Store)
     {
+    this.authUser$ = this.store.select(selectAuthUser)
     this.loadingService.setIsLoading(true);
     this.coursesService.getCourses().subscribe({
       next: (courses)=>{
@@ -33,6 +44,9 @@ export class CoursesComponent {
         this.loadingService.setIsLoading(false)
       }
     })
+    this.authUser$.subscribe(data=> {
+      this.role = data?.role;
+    });
   }
   
   ngOnInit(): void {
@@ -113,4 +127,12 @@ export class CoursesComponent {
     })
     
   }
+
+  onDetail(course: Course) {
+    const courseState: NavigationExtras = {
+      state: course
+    };
+    this.router.navigate(['dashboard/courses/'+course.id], courseState);
+  }
+
 }

@@ -13,7 +13,6 @@ export class UsersdetailComponent {
     this.usersService.getUsersById(this.route.snapshot.params['id']).subscribe({
       next:(findedUser)=>{
         this.foundUser=findedUser
-        console.log(this.foundUser);
       }
     })
       

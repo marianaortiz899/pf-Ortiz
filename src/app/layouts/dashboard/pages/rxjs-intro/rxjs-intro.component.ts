@@ -34,8 +34,6 @@ export class RxjsIntroComponent {
     ).subscribe({
       next: (usuarios)=> {
       this.alertsService.showSuccess('Realizado','Se cargaron los datos')
-
-      console.log(usuarios)
       },
       complete: () =>{
         this.LoadingService.setIsLoading(false)

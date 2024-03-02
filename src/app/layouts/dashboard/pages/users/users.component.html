@@ -63,8 +63,9 @@
     <mat-form-field>
         <mat-label>Rol</mat-label>
         <mat-select [(ngModel)]="userEdit.role" name="role">
-          <mat-option value="Admin">Admin</mat-option>
-          <mat-option value="user">User</mat-option>
+          <mat-option value="Admin">ADMIN</mat-option>
+          <mat-option value="user">USER</mat-option>
+          <mat-option value="user">STUDENT</mat-option>
         </mat-select>
     </mat-form-field>
     <button mat-raised-button color="accent" (click)="guardar()">guardar</button>

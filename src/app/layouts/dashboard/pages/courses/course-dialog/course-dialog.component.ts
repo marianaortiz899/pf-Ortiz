@@ -19,8 +19,12 @@ export class CourseDialogComponent {
   ) {
     this.courseForm = this.fb.group({
       name: this.fb.control('', [Validators.required, stringValidator] ),
-      tname: this.fb.control('', [Validators.required, stringValidator]),
+      description: this.fb.control('', [Validators.required, stringValidator] ),
+      schedule: this.fb.control('', [Validators.required, stringValidator] ),
+      price: this.fb.control('', [Validators.required, stringValidator] ),
     });
+
+
 
     if(editingCourse){
       this.courseForm.patchValue(editingCourse)
@@ -31,7 +35,6 @@ export class CourseDialogComponent {
     if (this.courseForm.valid) {
       this.dialogRef.close(this.courseForm.value);
     } else {
-      // Mostrar SweetAlert de error si el formulario no es válido
       Swal.fire({
         icon: 'error',
         title: 'Error',

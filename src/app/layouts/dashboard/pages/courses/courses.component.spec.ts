@@ -14,9 +14,11 @@ describe('Pruebas de CoursesComponent', () => {
         MockProvider(CoursesService, {
             getCourses: () =>
             of([{
-                id: 1,
-                name: 'Curso online de JavaScript',
-                tname:'Valentina Morales',
+              id: 1,
+              name: 'Curso online de JavaScript',
+              description: 'Dominando JavaScript: Desde Principiantes hasta Desarrolladores Avanzados',
+              schedule: 'Mon, Wed, Fri 10:00 - 12:00',
+              price: 70000,
             }
             ]),
         }),
@@ -25,10 +27,12 @@ describe('Pruebas de CoursesComponent', () => {
     component = TestBed.createComponent(CoursesComponent).componentInstance;
   });
 
-  it('Las columnas de la tabla de cursos deben ser (displayedColumns): "id", "courseName", "teacherName","actions"', () => {
+  it('Las columnas de la tabla de cursos deben ser (displayedColumns): "id", "name", "description","schedule","price","actions"', () => {
     expect(component.displayedColumns).toContain('id');
-    expect(component.displayedColumns).toContain('courseName');
-    expect(component.displayedColumns).toContain('teacherName');
+    expect(component.displayedColumns).toContain('name');
+    expect(component.displayedColumns).toContain('description');
+    expect(component.displayedColumns).toContain('schedule');
+    expect(component.displayedColumns).toContain('price');
     expect(component.displayedColumns).toContain('actions');
   });
 });
