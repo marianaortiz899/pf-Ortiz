@@ -1,1 +1,0 @@
-import{a}from"./chunk-XY23RJSJ.js";import"./chunk-FRWBXVHU.js";import"./chunk-C7CHWMTC.js";import"./chunk-3A6S76GP.js";import"./chunk-U2C7WTHA.js";import"./chunk-7WN7TALM.js";export{a as CoursesModule};

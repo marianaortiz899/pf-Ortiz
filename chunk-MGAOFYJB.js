@@ -1,0 +1,1 @@
+import{o as c,p as s,u as t,v as a,w as r}from"./chunk-RJSKI22Y.js";import{a as o,b as u}from"./chunk-KXB77ZPS.js";var n="auth",m={user:null},h=a(m,t(r.setAuthUser,(e,i)=>u(o({},e),{user:i.user})),t(r.logout,()=>m));var l=s(n),N=c(l,e=>e.user);export{n as a,h as b,N as c};
